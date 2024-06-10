@@ -1,7 +1,6 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Quicksand", sans-serif;
 }
 body {
   display: flex;
@@ -35,14 +34,13 @@ a {
 }
 .box-login input {
   font-size: 15px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
 }
+
 .box-login h2 {
   text-align: center;
   margin-top: 25px;
   margin-bottom: 55px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 35px;
 }
 .input-control {

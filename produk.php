@@ -11,7 +11,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Sport.Id</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+	
+	<!-- link google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
 	<!-- header -->
@@ -50,7 +60,7 @@
 						while($p = mysqli_fetch_array($produk)){
 				?>	
 					<a href="detail-produk.php?id=<?php echo $p['product_id'] ?>">
-						<div class="col-4">
+						<div class="col-6">
 							<img src="produk/<?php echo $p['product_image'] ?>">
 							<p class="nama"><?php echo substr($p['product_name'], 0, 30) ?></p><p><br>
 							<p class="harga">Rp. <?php echo number_format($p['product_price']) ?></p>

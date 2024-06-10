@@ -9,9 +9,21 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Sport.Id</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
+	<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- link google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
 </head>
 <body>
 	<!-- header -->
@@ -40,16 +52,20 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="img/logo.jpg" class="d-block w-100" height="600px" alt="Iklan Tidak Tersedia">
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="img/specss.webp" class="d-block w-100" height="600px" alt="Iklan Tidak Tersedia">
+    </div>
+	<div class="carousel-item">
+      <img src="img/ortus.webp" class="d-block w-100" height="600px" alt="Iklan Tidak Tersedia">
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="img/mills.jpg" class="d-block w-100" height="600px" alt="Iklan Tidak Tersedia">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -62,7 +78,8 @@
   </button>
 </div>
 	
-	
+	<br>
+	<br>
 
 
 
@@ -78,8 +95,8 @@
 						while($k = mysqli_fetch_array($kategori)){
 				?>
 					<a href="produk.php?kat=<?php echo $k['category_id'] ?>">
-						<div class="col-5">
-							<img src="img/logo.jpg" width="50px" style="margin-bottom:5px;">
+						<div class="col-3">
+							<img src="img/logo.jpg">
 							<p><?php echo $k['category_name'] ?></p>
 						</div>
 					</a>
@@ -96,7 +113,7 @@
 			<h3>Produk Terbaru</h3>
 			<div class="box">
 				<?php 
-					$produk = mysqli_query($conn, "SELECT * FROM tb_product WHERE product_status = 1 ORDER BY product_id DESC LIMIT 8");
+					$produk = mysqli_query($conn, "SELECT * FROM tb_product WHERE product_status = 1 ORDER BY product_id DESC LIMIT 6");
 					if(mysqli_num_rows($produk) > 0){
 						while($p = mysqli_fetch_array($produk)){
 				?>	
@@ -115,18 +132,20 @@
 	</div>
 
 	<!-- footer -->
-	<div class="footer">
+	<div class="footer-index">
 		<div class="container">
-			<h4>Alamat</h4>
+			<h6>Alamat</h6>
 			<p><?php echo $a->admin_address ?></p>
 
-			<h4>Email</h4>
+			<h6>Email</h6>
 			<p><?php echo $a->admin_email ?></p>
 
-			<h4>No. Hp</h4>
+			<h6>No. Hp</h6>
 			<p><?php echo $a->admin_telp ?></p>
 			<small>Copyright &copy; 2024 - Sport.Id</small>
 		</div>
 	</div>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </html>
